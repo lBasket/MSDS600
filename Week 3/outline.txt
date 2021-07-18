@@ -1,0 +1,31 @@
+Data Engineering
+    I had np.nans in my data from diving by 0 that I didn't notice at first
+        Those were hard to find because I was paying attention to nulls
+            errors mentioned nulls or inf and I was looking for nulls mistakenly for a while
+    I had to standardize the charges columns because the linear classifier I used is sensitive to the scale of the features
+    I also had to fill nulls that i missed in week 2
+Model Selection and Tuning
+    Okay so I choose 3 models to compare, mostly because I'm familiar with them and don't know much about picking a certain model for certain data
+    Random Forest
+        Normally has good performance
+        Very common model
+        A lot of hyperparameters to try to play with
+    SGD Classifier
+        Use a classic linear model
+        I think the Stochastic gradient descent converges fairly quickly?
+    NaiveBayes
+        Very simple, quick to train
+        No hyperparameters to tune
+        Used as "benchmark" to my other models since it's kinda the intro to classification model
+    RandomSearchCV
+        Really since I don't know good ranges for my hyperparameters or really how most of them affect my results, I just set a range for all of them that seemed relevant and set a very high number for the number of iterations to try. 
+Model Performance
+    Test Set Scores:
+        No information rate: 73.4564%
+        Naive Bayves: 72.9595%
+        SGD: 78.9922%
+        Random Forest: 77.7857%
+    Although the SGD was slightly better than the Random Forest, over the week as I kept re-training sometimes the RF was slightly better
+    The SGD and RandomForest were both extremely close in all metrics I looked at
+    Surprisingly, when voting for "no churn" the Random Forest is very confident, but the model never seems to be very confident when it does count churn?? I think is what's going on
+Business needs/use??
